@@ -4,7 +4,7 @@
 		private $servername ="localhost";
 		private $db_user ="root";
 		private $db_pass ="";
-		private $db_name = "db_employee";
+		private $db_name = "db_company";
 
 		public $conn;
 
@@ -29,14 +29,6 @@
 
 		} //end constructor
 
-		/*
-		$sql = $this->conn->prepare("SELECT * FROM tbl_userInfo WHERE Id=:Id AND Email=:Email LIMIT 5,2");
-
-		$sql->bindValue(':Id', $Id);
-		$sql->bindValue(':Email', $Email);
-		$sql->execute();
-
-		*/
 
 
 

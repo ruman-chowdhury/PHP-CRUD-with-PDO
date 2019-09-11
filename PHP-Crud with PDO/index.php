@@ -23,7 +23,7 @@
 			<div class="card">
 				<div class="card-header bg-light">
 					<h2>
-						User <strong>List</strong>
+						Brand <strong>List</strong>
 						<span class="float-right">
 							<a class="btn btn-success" href="addInfo.php">Add Info</a>
 						</span>
@@ -34,9 +34,9 @@
 					<table class="table table-borderless">
 						<tr >
 							<th>Serial</th>
-							<th>Name</th>
-							<th>Email</th>
-							<th>Phone No</th>
+							<th>Brand Name</th>
+							<th>Price</th>
+							<th>User Email</th>
 							<th>Action</th>
 						</tr>
 
@@ -49,9 +49,9 @@
 ?>
 						<tr>
 							<td> <?php echo $i;?> </td>
-							<td> <?php echo $value['Name'];?> </td>
+							<td> <?php echo $value['Brand'];?> </td>
+							<td> <?php echo "$". $value['Price'];?> </td>
 							<td> <?php echo $value['Email'];?> </td>
-							<td> <?php echo $value['Phone'];?> </td>
 							<td>
 								<a class="btn btn-outline-secondary btn-sm" href="editInfo.php?edit=<?php echo $value['Id'];?> ">Edit</a>
 								

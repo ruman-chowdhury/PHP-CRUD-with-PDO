@@ -26,19 +26,19 @@
 		//==========Insert data=======
 		public function insertData($data){
 
-			$name = $data['name'];
+			$brand = $data['brand'];
+			$price = $data['price'];
 			$email = $data['email'];
-			$phone = $data['phone'];
 
 			$chk_email = $this->checkEmail($email);
 
 
-			if ($name =="" OR $email =="" OR $phone ==""){
+			if ($brand =="" OR $price =="" OR $email ==""){
 				$msg = "<span class='alert alert-danger'><strong>*</strong> Field must not be empty!</span>" ;
 				return $msg;
 			}
 
-			if (strlen($name) < 3){
+			if (strlen($brand) < 3){
 				$msg = "<span class='alert alert-danger'><strong>*</strong> Name is too short!</span>" ;
 				return $msg;
 			}
@@ -54,13 +54,13 @@
 			}
 
 
-			$sql = "INSERT INTO mobiles(Name, Email, Phone)
-					  VALUES(:Name, :Email, :Phone)";
+			$sql = "INSERT INTO mobiles(Brand, Price, Email)
+					  VALUES(:Brand, :Price, :Email)";
 			$query = $this->db->conn->prepare($sql);
 
-			$query->bindValue(':Name', $name);
+			$query->bindValue(':Brand', $brand);
+			$query->bindValue(':Price', $price);
 			$query->bindValue(':Email', $email);
-			$query->bindValue(':Phone', $phone);
 			$insert_row = $query->execute();		  
 
 	
@@ -105,17 +105,18 @@
 		}
 
 		public function updateData($id, $data){
-			$name = $data['name'];
+			
+			$brand = $data['brand'];
+			$price = $data['price'];
 			$email = $data['email'];
-			$phone = $data['phone'];
 
 
-			if ($name =="" OR $email =="" OR $phone ==""){
+			if ($brand =="" OR $price =="" OR $email ==""){
 				$msg = "<span class='alert alert-danger'><strong>*</strong> Field must not be empty!</span>" ;
 				return $msg;
 			}
 
-			if (strlen($name) < 3){
+			if (strlen($brand) < 3){
 				$msg = "<span class='alert alert-danger'><strong>*</strong> Name is too short!</span>" ;
 				return $msg;
 			}
@@ -128,13 +129,13 @@
 
 
 			$sql = "UPDATE mobiles 
-					SET Name =:Name, Email =:Email, Phone =:Phone WHERE Id =:Id";
+					SET Brand =:Brand, Price =:Price, Email =:Email WHERE Id =:Id";
 			$query = $this->db->conn->prepare($sql);
 
 			$query->bindValue(':Id', $id);
-			$query->bindValue(':Name', $name);
+			$query->bindValue(':Brand', $brand);
+			$query->bindValue(':Price', $price);
 			$query->bindValue(':Email', $email);
-			$query->bindValue(':Phone', $phone);
 
 			$update_row = $query->execute();		  
 

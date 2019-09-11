@@ -27,7 +27,7 @@
 		<div class="card">
 			<div class="card-header bg-light">
 				<h2>
-					Update <strong>User</strong>
+					Update <strong>Info</strong>
 					<span class="float-right">
 						<a class="btn btn-outline-dark" href="index.php">Home</a>
 					</span>
@@ -45,19 +45,19 @@
 				<form action="editInfo.php?edit=<?php echo $id;?>" method="POST" accept-charset="utf-8" class="bg-light custom_form">
 
 					<div class="form-group">
-						<label for="name">Name:</label>
-						<input type="text" name="name" class="form-control" id="name" value="<?php echo $rowById->Name;?>">
+						<label for="brand">Brand:</label>
+						<input type="text" name="brand" class="form-control" id="brand" value="<?php echo $rowById->Brand;?>">
 					</div>
 
+
+					<div class="form-group">
+						<label for="price">Price:</label>
+						<input type="number" name="price" class="form-control" id="price" value="<?php echo $rowById->Price;?>">
+					</div>
 
 					<div class="form-group">
 						<label for="email">Email:</label>
 						<input type="email" name="email" class="form-control" id="email" value="<?php echo $rowById->Email;?>">
-					</div>
-
-					<div class="form-group">
-						<label for="phone">Phone No:</label>
-						<input type="number" name="phone" class="form-control" id="phone" value="<?php echo $rowById->Phone;?>">
 					</div>
 					
 					
